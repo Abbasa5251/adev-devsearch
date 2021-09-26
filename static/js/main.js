@@ -1,6 +1,7 @@
 const searchForm = document.querySelector("#searchForm");
 const pageLinks = document.querySelectorAll(".page-link");
 const tags = document.getElementsByClassName("project-tag");
+const BASE_URL = "https://adev-devsearch.herokuapp.com/";
 
 if (searchForm) {
 	for (let i = 0; pageLinks.length > i; i++) {
@@ -20,7 +21,7 @@ for (let i = 0; tags.length > i; i++) {
 		let tagId = e.target.dataset.tag;
 		let projectId = e.target.dataset.project;
 
-		fetch("http://localhost:8000/api/remove-tag", {
+		fetch(`${BASE_URL}api/remove-tag`, {
 			method: "DELETE",
 			headers: {
 				"Content-Type": "application/json",
