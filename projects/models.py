@@ -8,7 +8,12 @@ class Project(models.Model):
     owner = models.ForeignKey(Profile, null=True, blank=True, on_delete=models.CASCADE)
     title = models.CharField(verbose_name=_("title"), max_length=200)
     description = models.TextField(verbose_name=_("description"), null=True, blank=True)
-    featured_image = models.ImageField(null=True, blank=True, default="default.jpg")
+    featured_image = models.ImageField(
+        null=True,
+        blank=True,
+        upload_to="projects/",
+        default="projects/default.jpg",
+    )
     demo_link = models.CharField(
         verbose_name=_("demo link"), max_length=2000, null=True, blank=True
     )

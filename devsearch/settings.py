@@ -161,8 +161,13 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 
 DEFAULT_FILE_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"
-AWS_QUERYSTRING_AUTH = False
+
+AWS_QUERYSTRING_AUTH = config("AWS_QUERYSTRING_AUTH", default=False, cast=bool)
+AWS_S3_USE_SSL = config("AWS_S3_USE_SSL", default=True, cast=bool)
+AWS_DEFAULT_ACL = "public-read"
 AWS_S3_FILE_OVERWRITE = config("AWS_S3_FILE_OVERWRITE", default=False, cast=bool)
 AWS_ACCESS_KEY_ID = config("AWS_ACCESS_KEY_ID")
 AWS_SECRET_ACCESS_KEY = config("AWS_SECRET_ACCESS_KEY")
 AWS_STORAGE_BUCKET_NAME = config("AWS_STORAGE_BUCKET_NAME")
+AWS_S3_ENDPOINT_URL = f'https://{config("AWS_BUCKET_REGION")}.linodeobjects.com'
+AWS_s3_REGION_NAME = config("AWS_BUCKET_REGION")
