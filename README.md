@@ -1,6 +1,4 @@
-
 # ADev Devsearch
-
 
 ## Demo
 
@@ -8,4 +6,4 @@
 
 ## Acknowledgements
 
- - Inspired by [Dennis Ivy](https://github.com/divanov11)
+-   Inspired by [Dennis Ivy](https://github.com/divanov11)
